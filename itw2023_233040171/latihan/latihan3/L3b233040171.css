@@ -1,0 +1,23 @@
+body{
+    background-color: aqua;
+    font-family: Georgia;
+
+}
+h1{
+    font-family: comic sans ms; 
+    font-size: 60 px;
+    color: darkblue;
+}
+h4{
+    text-align: right;
+    font-style: italic;
+}
+p{
+    text-align: justify;
+}
+p.p1{
+    color: orange;
+}
+h3 a{
+    color: white;
+}

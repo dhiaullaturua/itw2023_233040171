@@ -1,0 +1,246 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #eaeaea;
+    color: #000;
+    font-family: 'Playpen Sans', cursive;
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    margin-top: 50px;
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* -------  Navbar ---------- */
+
+.navbar {
+    width: 1000px;
+    background: #ddd;
+    margin: 10px auto;
+    margin-top: 25px;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 35px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #aaa;
+    transition: .5s;
+}
+
+.navbar ul li a:hover {
+    color: magenta;
+}
+
+
+
+/* -------  Content ---------- */
+
+.container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    line-height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.photos {
+    width: 350px;
+    height: 45rem;
+    overflow: hidden;
+    padding: 40px;
+}
+
+.images {
+    width: 20%;
+    height: 600px;
+    display: flex;
+    justify-content: space-evenly;
+    transition: 1s;
+    margin-bottom: 50px;
+}
+
+
+
+.navigation a {
+    background-color: rgb(131, 191, 250);
+    border-radius: 50%;
+    text-decoration: none;
+    padding: 6px;
+    font-size: 0;
+}
+
+.navigation a:hover {
+    background: #05ebf8;
+}
+/* ----- Target ------- */
+
+
+#slide1:target~ .images {
+    margin-left: 0%;
+}
+
+#slide2:target~ .images {
+    margin-left: 0%;
+}
+
+#slide3:target~ .images {
+    margin-left: -50%;
+}
+
+
+
+#slide-rebecca-1:target~ .images {
+    margin-left: 50%;
+}
+
+#slide-rebecca-2:target~ .images {
+    margin-left: 0%;
+}
+
+#slide-rebecca-3:target~ .images {
+    margin-left: -50%;
+}
+
+
+
+
+#slide-tokyo-1:target~ .images {
+    margin-left: 50%;
+}
+
+#slide-tokyo-2:target~ .images {
+    margin-left: 0%;
+}
+
+#slide-tokyo-3:target~ .images {
+    margin-left: -50%;
+}
+
+
+#slide-vonzy-1:target~ .images {
+    margin-left: 50%;
+}
+
+#slide-vonzy-2:target~ .images {
+    margin-left: 0%;
+}
+
+#slide-vonzy-3:target~ .images {
+    margin-left: -50%;
+}
+
+/* ----- Overlay ------ */
+
+.overlay {
+    background: rgba(0, 0, 0, .6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.overlay img {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.overlay:target {
+    transform: scale(1);
+    opacity: 1;
+    z-index: 9999;
+}
+
+.overlay .close {
+    font-size: 25px;
+    bottom: 2%;
+    background: #aaa;
+    text-decoration: none;
+    color: #000;
+    border-radius: 15px;
+    transition: .4s;
+    position: absolute;
+    padding: 0 15px;
+}
+
+.overlay .close:hover {
+    background: #000;
+    color: #aaa;
+}
+
+.next {
+    text-decoration: none;
+    color: #000;
+    font-size: 40pt;
+    position: absolute;
+    top: 45%;
+    left: 70%;
+    margin-bottom: 50px;
+    opacity: 0;
+}
+
+.next:hover {
+    color: #aaa;
+}
+
+.prev {
+    text-decoration: none;
+    color: #000;
+    font-size: 40pt;
+    position: absolute;
+    top: 45%;
+    left: 31%;
+    margin-bottom: 50px;
+    opacity: 0;
+}
+
+.prev:hover {
+    color: #aaa;
+}
+
+.overlay:target img {
+    animation: move 1s;
+}
+
+.overlay:target .next,
+.overlay:target .prev {
+    animation: move .5s .5s forwards;
+}
+
+
+
+/* ----- Animation ------ */
+
+
+@keyframes move {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

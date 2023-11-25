@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Flexbox</title>
+</head>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+.navbar {
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.navbar ul{
+    display: flex;
+    color: #fff;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.navbar ul li{
+    padding: 5px;
+}
+
+.navbar ul li:hover{
+    background-color: pink;
+    color: blue;
+    border-radius: 5px;
+    box-shadow: 0 0 50px pink;
+
+}
+
+h1{
+    color: pink;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+</style>
+<body>
+    <div class="navbar">
+        <h1>Dhiaul</h1>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Service</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <h2>Hello world!!!</h2>
+</body>
+</html>

@@ -57,27 +57,27 @@ h1 {
     display: flex;
     justify-content: center;
     text-align: center;
-    flex-wrap: wrap;
     line-height: 60px;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    overflow: hidden;
 }
 
 .photos {
-    width: 350px;
-    height: 45rem;
+    width: 400px;
+    margin: 10px auto;
     overflow: hidden;
-    padding: 40px;
+    padding: 20px;
 }
 
 .images {
-    width: 20%;
-    height: 600px;
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
     transition: 1s;
-    margin-bottom: 50px;
+    animation: SliderMove 5s infinite;
+    animation-direction: alternate;
 }
 
 
@@ -96,22 +96,10 @@ h1 {
 /* ----- Target ------- */
 
 
-#slide1:target~ .images {
-    margin-left: 0%;
-}
-
-#slide2:target~ .images {
-    margin-left: 0%;
-}
-
-#slide3:target~ .images {
-    margin-left: -50%;
-}
-
 
 
 #slide-rebecca-1:target~ .images {
-    margin-left: 50%;
+    margin-left: 112%;
 }
 
 #slide-rebecca-2:target~ .images {
@@ -119,14 +107,14 @@ h1 {
 }
 
 #slide-rebecca-3:target~ .images {
-    margin-left: -50%;
+    margin-left: -112%;
 }
 
 
 
 
 #slide-tokyo-1:target~ .images {
-    margin-left: 50%;
+    margin-left: 112%;
 }
 
 #slide-tokyo-2:target~ .images {
@@ -134,12 +122,12 @@ h1 {
 }
 
 #slide-tokyo-3:target~ .images {
-    margin-left: -50%;
+    margin-left: -112%;
 }
 
 
 #slide-vonzy-1:target~ .images {
-    margin-left: 50%;
+    margin-left: 112%;
 }
 
 #slide-vonzy-2:target~ .images {
@@ -147,7 +135,7 @@ h1 {
 }
 
 #slide-vonzy-3:target~ .images {
-    margin-left: -50%;
+    margin-left: -112%;
 }
 
 /* ----- Overlay ------ */
@@ -165,8 +153,9 @@ h1 {
 
 .overlay img {
     position: absolute;
-    margin-top: 20px;
-    margin-left: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 13%;
 }
 
 .overlay:target {
@@ -177,7 +166,6 @@ h1 {
 
 .overlay .close {
     font-size: 25px;
-    bottom: 2%;
     background: #aaa;
     text-decoration: none;
     color: #000;
@@ -185,6 +173,9 @@ h1 {
     transition: .4s;
     position: absolute;
     padding: 0 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2%;
 }
 
 .overlay .close:hover {
@@ -198,7 +189,7 @@ h1 {
     font-size: 40pt;
     position: absolute;
     top: 45%;
-    left: 70%;
+    left: 68%;
     margin-bottom: 50px;
     opacity: 0;
 }
@@ -213,7 +204,7 @@ h1 {
     font-size: 40pt;
     position: absolute;
     top: 45%;
-    left: 31%;
+    left: 30%;
     margin-bottom: 50px;
     opacity: 0;
 }
@@ -242,5 +233,17 @@ h1 {
     }
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes SliderMove {
+    0% {
+        margin-left: 0;
+    }
+    50% {
+        margin-left: -112%;
+    }
+    100% {
+        margin-left: 112%;
     }
 }

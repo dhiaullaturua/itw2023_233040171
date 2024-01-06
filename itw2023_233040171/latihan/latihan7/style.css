@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    background-color: #ddd;
+    font-size: 18px; 
+    margin: 50px;
+}
+
+/* container */
+.container{
+    display: grid;
+}
+
+/* Header */
+.header {
+    display: grid;
+    grid-template-areas:
+        'hero hero feature-1'
+        'hero hero feature-2';
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 160%;
+}
+
+.hero {
+    grid-area: hero;
+    min-height: 350px;
+    background-image: url(./img/amrbi_20170406_001647.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+}
+
+.hero h2>* {
+    display: none;
+}
+
+.features {
+    background-color: #000;
+    color: white;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    /* place-content: center; */
+    text-align: center;
+    cursor: pointer;
+}
+
+.feature-1 {
+    grid-area: feature-1;
+    background-image:url(./img/martabak1.jfif) ;
+    background-size: cover;
+}
+
+.feature-2 {
+    grid-area: feature-2;
+    background-image: url(./img/martabak\ telur.jfif);
+    background-size: cover;
+}
+
+.features .price {
+    font-size: 3em;
+    font-weight: 200;
+}
+
+/* Navigation */
+.menu {
+    order: -1;
+    display: flex;
+    align-items: center;
+
+    
+}
+
+.menu .brand {
+    font-size: 1.3em;
+    color: #333;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    text-align: right;
+    gap: 5px;
+    padding: 15px;
+}
+
+.menu a{
+    display: block;
+    background-color: #000;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    text-transform: uppercase
+    
+}
+
+/* Responsive Breakpoint */
+@media  (max-width: 1042px){
+.menu{
+    order: inherit;
+    grid-template-columns: 1fr;
+}
+
+.menu .brand{
+    display: none;
+    gap: 10px;
+}
+
+.hero > *{
+    display: block;
+    background-color: #000;
+    color: white;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+}
+
+@media  (max-width: 768){
+
+}
+
+@media  (max-width: 500){
+
+}
